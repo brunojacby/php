@@ -62,18 +62,18 @@ Este é um projeto simples de CRUD (Create, Read, Update, Delete) utilizando Ang
 
 ## Estrutura de Diretórios
 
-project-root/
-├── backend/
-│ ├── api/
-│ ├── index.php
-│ └── ...
-├── frontend/
-│ ├── src/
-│ ├── angular.json
-│ ├── package.json
-│ └── ...
-├── proxy.conf.json
-└── README.md
+project-root/<br>
+├── backend/<br>
+│ ├── api/<br>
+│ ├── index.php<br>
+│ └── ...<br>
+├── frontend/<br>
+│ ├── src/<br>
+│ ├── angular.json<br>
+│ ├── package.json<br>
+│ └── ...<br>
+├── proxy.conf.json<br>
+└── README.md<br>
 
 
 ## Endpoints da API
@@ -103,4 +103,4 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 Para mais informações ou suporte, entre em contato:
 
-- **GitHub:** [seu-github](https://github.com/brunojacby/)
+- **GitHub:** [brunojacby](https://github.com/brunojacby/)
