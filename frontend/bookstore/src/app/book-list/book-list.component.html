@@ -1,0 +1,23 @@
+<div class="book-list-container">
+  <h1>Lista de Livros</h1>
+
+  <button routerLink="/add" class="add-book-button">Adicionar Novo Livro</button>
+
+  <div *ngIf="books.length === 0" class="no-books">
+    Nenhum livro disponível.
+  </div>
+
+  <ul class="book-list" *ngIf="books.length > 0">
+    <li *ngFor="let book of books" class="book-item">
+      <div class="book-info">
+        <h2>{{ book.title }}</h2>
+        <p>Autor: {{ book.author }}</p>
+        <p>Ano: {{ book.publication_year }}</p>
+      </div>
+      <div class="book-actions">
+        <button routerLink="/edit/{{book.id}}" class="edit-button">Editar</button>
+        <button (click)="deleteBook(book.id)" class="delete-button">Excluir</button>
+      </div>
+    </li>
+  </ul>
+</div>
