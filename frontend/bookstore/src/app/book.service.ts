@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class BookService {
-  private apiUrl = 'https://freetestapi.com/api/v1/books';
+  private apiUrl = 'http://localhost/api.php';
 
   constructor(private _http: HttpClient) {}
 
@@ -15,7 +15,7 @@ export class BookService {
   }
 
   getBookById(id: string): Observable<any> {
-    return this._http.get<any>(`${this.apiUrl}/${id}`);
+    return this._http.get<any>(`${this.apiUrl}?id=${id}`);
   }
 
   addBook(book: any): Observable<any> {
