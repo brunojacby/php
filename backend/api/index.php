@@ -1,5 +1,8 @@
 <?php
 header('Content-Type: application/json');
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 $apiUrl = "https://freetestapi.com/api/v1/books";
 
@@ -9,7 +12,12 @@ $input = json_decode(file_get_contents('php://input'), true);
 
 switch ($method) {
     case 'GET':
-        $response = file_get_contents($apiUrl);
+        if (isset($_GET['id'])) {
+            $id = intval($_GET['id']); // Converte o ID para um inteiro
+            $response = file_get_contents($apiUrl . '/' . $id); // Adiciona o ID à URL da API
+        } else {
+            $response = file_get_contents($apiUrl); // Se não tiver ID, busca todos os livros
+        }
         echo $response;
         break;
 
